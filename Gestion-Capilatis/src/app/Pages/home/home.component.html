@@ -1,0 +1,77 @@
+<div class="home-ctn-gral">
+    <div class="header-home-ctn">
+        <div class="logo-capi"></div>
+        <div class="user-ctn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="36" height="36" viewBox="0 0 24 24" stroke-width="1" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="7" r="4" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="menu-home-ctn">
+        <p-accordion class="prueba" >
+            <p-accordionTab header="Registro de empleado">
+                <ul class="links-menu-ctn">
+                    <li class="link-menu-ctn"><a class="link-menu" href="#" [routerLink]="['listempleado']">Empleados Activos</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Empleados Inactivos</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#" [routerLink]="['newemployee']">Nuevo Empleado</a></li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="Novedades">
+                <ul class="links-menu-ctn">
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Carga General</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Premios</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Presentismo</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Almuerzos</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Horas Extras</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Aceptación Masiva</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Días de Estudio</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Licencias</a></li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="Vacaciones">
+                <ul class="links-menu-ctn">
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Carga de Vacaciones</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Listado de Vacaciones</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Vacaciones Gozadas</a></li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="Cargas Varias">
+                <ul class="links-menu-ctn">
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Indumentarias</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Recibos de Sueldo</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Fechas Especiales</a></li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="Reportes">
+                <ul class="links-menu-ctn">
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Novedades</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Vacaciones</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Cumpleaños</a></li>
+                </ul>
+            </p-accordionTab>
+            <p-accordionTab header="Administrador">
+                <ul class="links-menu-ctn">
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Nuevo Administrador</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Lista de Usuarios</a></li>
+                    <li class="link-menu-ctn"><a class="link-menu" href="#">Respaldar Base de Datos</a></li>
+                </ul>
+            </p-accordionTab>
+        </p-accordion>
+
+    </div>
+
+    <div class="contenido-home-ctn">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+
+
+
+</div>
+
+

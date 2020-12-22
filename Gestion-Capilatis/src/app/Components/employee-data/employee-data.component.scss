@@ -1,0 +1,544 @@
+@import "../../../variables";
+
+.employee-data-ctn{
+  @include mq($mw-1024){
+    width: 100%;
+    overflow: hidden;
+
+  }
+}
+
+.employee-form-ctn{
+  @include mq($mw-1024){
+    margin-top: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 15rem 30rem 12rem 5rem;
+  }
+}
+
+.employee-img-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.img-emp{
+  @include mq($mw-1024){
+    width: 10rem;
+    height: 11rem;
+    background-color: #EFF5FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $cl-prin;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-shadow: $shadow2;
+  }
+}
+
+.img-user{
+  @include mq($mw-1024){
+    width: 12rem;
+    height: 14rem;
+    border: 2px solid $cl-prin;
+    border-radius: 6px;
+  }
+}
+
+
+.icon-user-plus{
+  font-size: 5rem;
+  color: $cl-sec;
+}
+
+
+.employee-datosP-ctn{
+  @include mq($mw-1024){
+    grid-column: 2/4;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+}
+
+.input-datosp-ctn{
+  @include mq($mw-1024){
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .4rem;
+    margin-left: 4rem;
+  }
+}
+
+.label-text, .label-text2{
+  @include mq($mw-1024){
+    width: 12rem;
+    text-align: right;
+    padding-bottom: .5rem;
+    padding-right: 1rem;
+    font-family: $ft-prin;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: .9rem;
+    color: #424242;
+  }
+}
+
+.label-text2{
+  @include mq($mw-1024){
+    width: 100%;
+    grid-column: 1/2;
+    text-align: right;
+    padding-bottom: unset;
+    align-self: center;
+    padding-right: .5rem;
+  }
+}
+
+.form-input-text, .form-input-text2, .form-input-text3{
+  @include mq($mw-1024){
+    width: 25rem;
+    height: 1.5rem;
+    border: 1px solid $cl-prin;
+    text-indent: .5rem;
+    letter-spacing: 1px;
+    margin-bottom: .5rem;
+  }
+}
+
+.form-input-text2, .form-input-text3{
+  @include mq($mw-1024){
+    width: 14rem;
+    grid-column: 2/3;
+    align-self: center;
+    margin-bottom: unset;
+  }
+}
+
+.form-input-text3{
+  @include mq($mw-1024){
+    width: 12.5rem;
+  }
+}
+
+.form-input-text::placeholder, .form-input-text2::placeholder, .form-input-text3::placeholder{
+  @include mq($mw-1024){
+    font-family: $ft-prin;
+    font-size: .9rem;
+  }
+}
+
+.form-input-text:focus, .form-input-text2:focus{
+  outline: none;
+  border: 2px solid $cl-prin;
+}
+
+.form-date{
+  @include mq($mw-1024){
+    font-family: $ft-prin;
+    color: gray;
+    font-size: .9rem;
+    text-indent: .25rem;
+    text-align: left;
+  }
+}
+
+//input[type="date"]::-webkit-calendar-picker-indicator{
+//  display: none;
+//}
+
+.form-select{
+  @include mq($mw-1024){
+    color: gray;
+    outline: none;
+    font-family: $ft-prin;
+    font-size: .8rem;
+  }
+}
+
+.form-select-option {
+  @include mq($mw-1024) {
+    font-family: $ft-prin;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    color: gray;
+  }
+}
+.double-input-ctn{
+  @include mq($mw-1024){
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+}
+
+.employee-datosL-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/4;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 8% 52% 10% 28%;
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+.title-datosL-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/4;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: .5rem;
+    border-bottom: 1px solid gray;
+
+  }
+}
+
+.title-datosL{
+  @include mq($mw-1024){
+    font-family: $ft-sec;
+    letter-spacing: 1px;
+    color: $cl-prin;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+.title-datosL2-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/4;
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+  }
+}
+
+.datosL-col1-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.datosL-col2-ctn{
+  @include mq($mw-1024){
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.datosL-col3-ctn{
+  @include mq($mw-1024){
+    grid-column: 3/4;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.datosL-col4-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/2;
+    grid-row: 4/5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: .5rem;
+  }
+}
+
+
+.datosL-col5-ctn{
+  @include mq($mw-1024){
+    grid-column: 2/3;
+    grid-row: 4/5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: .5rem;
+  }
+}
+
+
+.datosL-col6-ctn{
+  @include mq($mw-1024){
+    grid-column: 3/4;
+    grid-row: 4/5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: .5rem;
+  }
+}
+
+.input-datosL-ctn{
+  @include mq($mw-1024){
+    width: 100%;
+    height: 2.2rem;
+    display: grid;
+    grid-template-columns: 35% 65%;
+
+   }
+}
+
+.employee-docs-ctn{
+  @include mq($mw-1024){
+    grid-row: 3/4;
+    grid-column: 1/4;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 25% 75%;
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+.title-docs-ctn{
+  @include mq($mw-1024){
+    grid-column: 1/5;
+    grid-row: 1/2;
+    text-align: center;
+    margin-top: 1rem;
+    border-bottom: 1px solid gray;
+  }
+}
+
+.docs-afip{
+  @include mq($mw-1024){
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.docs-dnifr{
+  @include mq($mw-1024){
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.docs-dnido{
+  @include mq($mw-1024){
+    grid-column: 3/4;
+    grid-row: 2/3;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.docs-cuil{
+  @include mq($mw-1024){
+    grid-column: 4/5;
+    grid-row: 2/3;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.title-arch{
+  @include mq($mw-1024){
+    font-family: $ft-sec;
+    font-size: .9rem;
+    font-weight: 400;
+    color: $cl-prin;
+    letter-spacing: 1px;
+  }
+}
+
+.form-btns-ctn{
+  @include mq($mw-1024){
+    width: 100%;
+    height: 100%;
+    grid-column: 1/4;
+    grid-row: 4/5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.btn-img-emp{
+  @include mq($mw-1024){
+    margin-bottom: .2rem;
+  }
+}
+
+.btn-emp, .btn-emp-vol{
+  @include mq($mw-1024){
+    width: 8rem;
+    height: 2rem;
+    font-family: $ft-sec;
+    letter-spacing: 1px;
+    color: $cl-sec;
+    background-color: $cl-prin;
+    border: none;
+    border-radius: 4px;
+    box-shadow: $shadow2;
+    cursor: pointer;
+    transition: all .5s;
+    &:hover{
+      background-color: $cl-sec;
+      color: $cl-prin;
+      border: 1px solid $cl-prin;
+      transition: all .5s;
+    }
+  }
+}
+
+.btn-emp:focus, .btn-emp-vol:focus{
+  outline: none;
+  border: 2px solid $cl-prin;
+}
+
+.btn-emp-vol{
+  @include mq($mw-1024){
+    color: $cl-prin;
+    background-color: $cl-sec;
+    border: 1px solid $cl-prin;
+    margin-right: .5rem;
+    &:hover{
+      background-color: $cl-prin;
+      color: $cl-sec;
+      transition: all .5s;
+    }
+  }
+}
+
+.btn-car-arch-ctn{
+  @include mq($mw-1024){
+    background-color: $cl-prin;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 8rem;
+    height: 2.5rem;
+    position: relative;
+    cursor: pointer;
+    &:hover{
+      background-color: $cl-ter;
+    }
+  }
+}
+
+.btn-car-arch-text{
+  @include mq($mw-1024){
+    font-family: $ft-prin;
+    color: $cl-sec;
+  }
+}
+
+.btn-car-arch{
+  @include mq($mw-1024){
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+.form-check-ctn{
+  @include mq($mw-1024){
+    width: 11rem;
+    height: 100%;
+    grid-column: 2/3;
+    align-self: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form-check{
+  @include mq($mw-1024){
+    width: 1rem;
+    height: 1rem;
+
+  }
+}
+
+.form-check2{
+  @include mq($mw-1024){
+    margin-right: .5rem;
+    width: 1rem;
+    height: 1rem;
+
+  }
+}
+

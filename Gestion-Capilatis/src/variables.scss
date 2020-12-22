@@ -1,0 +1,39 @@
+$cl-prin: #0066AD;
+$cl-sec: #FAFAFA;
+$cl-ter: #064C7C;
+$cl-cuar: rgba(0, 102, 173, 0.8);
+$cl-quin: rgba(0, 102, 173, 0.2);
+$cl-menu: #F8F9FA;
+$ft-prin: 'Lato', sans-serif;
+$ft-sec: 'Roboto', sans-serif;
+$shadow: 4px 4px 8px -3px rgba(0,0,0,0.70);
+$shadow2: 1px 1px 8px -1px rgba(0,0,0,0.70);
+$mw-480: 480px;
+$mw-580: 580px;
+$mw-768: 768px;
+$mw-992: 992px;
+$mw-1024: 1024px;
+$mw-1280: 1280px;
+$mw-1366: 1366px;
+$mw-1680: 1680px;
+
+
+@mixin mq($mw){
+  @media screen and (min-width: $mw){
+    @content
+  }
+}
+
+@mixin df-drow($fd:row,$jc:center,$ai:center) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin df-dcol($fd:column,$jc:center,$ai:center) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}

@@ -1,0 +1,329 @@
+@import "../../../variables";
+
+.ctn-padre{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100vh;
+  position: relative;
+}
+
+.ctn-login{
+  grid-row: 1/2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.img-login{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/img/fondo/fondo-capi-blur320.jpg");
+  top: 0;
+  background-attachment: fixed;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+  @include mq($mw-480){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur480.jpg");
+  }
+  @include mq($mw-580){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur580.jpg");
+  }
+  @include mq($mw-768){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur768.jpg");
+  }
+  @include mq($mw-992){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur992.jpg");
+  }
+  @include mq($mw-1024){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur1024.jpg");
+  }
+  @include mq($mw-1280){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur1280.jpg");
+  }
+  @include mq($mw-1366){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur1366.jpg");
+  }
+  @include mq($mw-1680){
+    background-image: url("../../../assets/img/fondo/fondo-capi-blur1920.jpg");
+  }
+  &:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+  }
+}
+
+.title-ctn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100;
+}
+
+.title-login{
+  font-family: $ft-sec;
+  font-weight: 600;
+  color: $cl-sec;
+  z-index: 100;
+  @include mq($mw-480){
+    font-size: 2.5rem;
+  }
+  @include mq($mw-580){
+    font-size: 3rem;
+  }
+  @include mq($mw-768){
+    font-size: 3.5rem;
+  }
+  @include mq($mw-992){
+
+  }
+  @include mq($mw-1280){
+
+  }
+  @include mq($mw-1366){
+
+  }
+  @include mq(1920px){
+    font-size: 4rem;
+  }
+}
+
+.form-login-ctn{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  background-color: $cl-cuar;
+  z-index: 100;
+  border-radius: 6px;
+
+  @include mq($mw-480){
+    width: 70%;
+    margin-bottom: 0;
+  }
+  @include mq($mw-580){
+    width: 60%;
+  }
+  @include mq($mw-768){
+    width: 50%;
+  }
+  @include mq($mw-992){
+    width: 40%;
+  }
+  @include mq($mw-1280){
+    width: 30%;
+  }
+  @include mq($mw-1366){
+    width: 25%;
+  }
+  @include mq(1920px){
+    width: 20%;
+  }
+}
+
+.form-login-items{
+  z-index: 100;
+}
+
+.form-title-ctn{
+  width: 100%;
+  height: 3rem;
+  background-color: $cl-ter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 1rem;
+
+}
+
+.form-title{
+  font-family: $ft-sec;
+  color: $cl-sec;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+}
+
+.form-login{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-input-text-ctn, .form-input-pass-ctn{
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: $ft-sec;
+  color: gray;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form-input-text, .form-input-pass{
+  width: 90%;
+  height: 2rem;
+  margin: 0 0 .5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  text-indent: .5rem;
+  position: relative;
+  &::placeholder{
+    font-family: $ft-sec;
+    color: $cl-ter;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+.icon-text{
+  position: absolute;
+  color: $cl-ter;
+  right: 2rem;
+  top: .5rem;
+  width: 1rem;
+  height: 2rem;
+  z-index: 150;
+  font-size: 1.2rem;
+}
+
+.icon-lock{
+  right: 1.9rem;
+}
+
+.form-input-text:focus, .form-input-pass:focus, .form-btn:focus{
+  outline: none;
+}
+
+.sep{
+  width: 100%;
+  border-bottom: 1px solid $cl-sec;
+  margin-bottom: .5rem;
+}
+
+.form-record-ctn{
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-check{
+  margin-right: .2rem;
+}
+
+.text-check{
+  font-family: $ft-sec;
+  font-size: .8rem;
+  color: $cl-sec;
+
+}
+
+.form-btn-ctn{
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: .5rem;
+
+}
+
+.form-btn{
+  width: 8rem;
+  height: 2rem;
+  position: relative;
+  border: none;
+  text-align: left;
+  padding-left: 1.2rem;
+  color: $cl-ter;
+  font-family: $ft-sec;
+  font-weight: bold;
+  letter-spacing: 1px;
+  &:before{
+    content: '\f090';
+    font-family: 'icomoon', sans-serif;
+    position: absolute;
+    right: 0;
+    top: -1px;
+    width: 2rem;
+    height: 2.094rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $cl-ter;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    color: $cl-sec;
+    font-size: 1.2rem;
+    font-weight: normal;
+
+  }
+}
+
+.form-error-ctn{
+  width: 100%;
+  height: 2rem;
+  background-color: rgba(231, 76, 60, 0.90);
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-error{
+  font-family: $ft-sec;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: .8rem;
+  color: $cl-sec;
+  text-align: center;
+}
+
+.form-olv-pass-ctn{
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: .5rem;
+}
+
+.olv-pass{
+  font-family: $ft-sec;
+  color: $cl-sec;
+  letter-spacing: 1px;
+  font-size: .9rem;
+}
+
+.footer-login-ctn{
+  width: 100%;
+  height: 2rem;
+  background-color: $cl-prin;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+}
+
+.logo{
+  width: 8.7rem;
+  height: 2rem;
+  background-image: url("../../../assets/Logo/logo-capilatis.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+}

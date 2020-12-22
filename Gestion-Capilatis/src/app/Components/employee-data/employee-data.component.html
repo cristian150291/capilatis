@@ -1,0 +1,324 @@
+<div class="employee-data-ctn">
+	<form  class="employee-form-ctn" action="" name="employeeDataForm" #employeeDataForm="ngForm"  (ngSubmit)="sendEmployee()" >
+			<div class="employee-img-ctn">
+				<div class="img-emp" *ngIf="img_foto==''">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-camera-plus" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#0066AD" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+						<circle cx="12" cy="13" r="3" />
+						<path d="M5 7h2a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h2m9 7v7a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" />
+						<line x1="15" y1="6" x2="21" y2="6" />
+						<line x1="18" y1="3" x2="18" y2="9" />
+					</svg>
+				</div>
+				<div class="btn-img-emp" *ngIf="img_foto==''">
+					<div class="btn-car-arch-ctn">
+						<p class="btn-car-arch-text">Cargar Archivo</p>
+						<input type="file" class="btn-car-arch" (change)="fileChangeEventFoto($event)">
+					</div>
+				</div>
+				<div class="imp-emp" *ngIf="img_foto!=''">
+					<img src="{{img_foto}}" alt="imagen de perfil del empleado" class="img-user">
+				</div>
+			</div>
+			<div class="employee-datosP-ctn">
+				<div class="input-datosp-ctn">
+					<span  class="label-text">Nombre:</span>
+					<input  type="text" name="nombre" class="form-input-text" placeholder="Nombre" #nombre="ngModel" [(ngModel)]="nominaModel.nombre" required />
+				</div>
+				<div class="input-datosp-ctn">
+					<span  class="label-text">Legajo:</span>
+					<input  type="number" name="id_legajo" class="form-input-text" placeholder="Legajo" #id_legajo="ngModel" [(ngModel)]="nominaModel.id_legajo" required >
+				</div>
+				<div class="input-datosp-ctn">
+					<span  class="label-text">Cuil:</span>
+					<input type="number" name="cuil" class="form-input-text" placeholder="Cuil" #nombre="ngModel" [(ngModel)]="nominaModel.cuil"/>
+				</div>
+
+				<div class="input-datosp-ctn">
+					<span  class="label-text">Fecha de ingreso:</span>
+					<input  type="date" name="fecha_ingreso" class="form-input-text form-date" placeholder="Fecha Ingreso" #nombre="ngModel" [(ngModel)]="nominaModel.fecha_ingreso"/>
+				</div>
+
+				<div class="input-datosp-ctn">
+					<span  class="label-text">Fecha de nacimiento:</span>
+					<input  type="date" name="fecha_nacimiento" class="form-input-text form-date" placeholder="Fecha Nacimiento" #nombre="ngModel" [(ngModel)]="nominaModel.fecha_nacimiento"/>
+				</div>
+
+				<div class="input-datosp-ctn">
+					<span  class="label-text">Email:</span>
+					<input  type="email" name="mail" class="form-input-text" placeholder="Mail" #nombre="ngModel" [(ngModel)]="nominaModel.mail" />
+				</div>
+			</div>
+
+			<div class="employee-datosL-ctn">
+				<div class="title-datosL-ctn">
+					<h2 class="title-datosL">
+						Datos Laborales:2020
+					</h2>
+				</div>
+				<div class="datosL-col1-ctn">
+					<div class="input-datosL-ctn prueba-select">
+						<span  class="label-text2">Sector:</span>
+						<select name="id_sector" #id_sector="ngModel" [(ngModel)]="nominaModel.id_sector" class="form-input-text2 form-select" >
+							<option value="-1" class="form-select-option">Seleccione Sector</option>
+							<option *ngFor="let item of selectsector" value="{{item.id}}" class="form-select-option">{{item.descripcion}}</option>
+						</select>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Convenio:</span>
+						<input type="text" name="convenio" class="form-input-text2" placeholder="Convenio" #nombre="ngModel" [(ngModel)]="nominaModel.convenio"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Obra Social:</span>
+						<select name="id_o_social" #id_o_social="ngModel" [(ngModel)]="nominaModel.id_o_social" class="form-input-text2 form-select" >
+							<option *ngIf="id_o_social" value="-1" class="form-select-option">Seleccione Obra Social</option>
+							<option *ngFor="let item of selectosocial" value="{{item.id}}" class="form-select-option">{{item.descripcion}}</option>
+						</select>
+
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Empresa ART:</span>
+						<input type="text" name="art" class="form-input-text2" placeholder="Empresa ART" #nombre="ngModel" [(ngModel)]="nominaModel.art"/>
+					</div>
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Horas Extras:</span>
+						<div class="double-input-ctn">
+							<input type="checkbox" name="hsextra" class="form-check2" #nombre="ngModel" [(ngModel)]='nominaModel.hsextra'>
+							<input type="text" name="t_hsextra" class="form-input-text3" placeholder="Hs.Extras" #nombre="ngModel" [(ngModel)]="nominaModel.t_hsextra"/>
+						</div>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Presentismo:</span>
+						<div class="form-check-ctn">
+							<input type="checkbox" name="presentismo" class="form-check" #nombre="ngModel" [(ngModel)]='nominaModel.presentismo'>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="datosL-col2-ctn">
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Grupo:</span>
+						<select name="id_grupo" #id_grupo="ngModel" [(ngModel)]="nominaModel.id_grupo" class="form-input-text2 form-select">
+							<option *ngIf="id_grupo" value="-1" class="form-select-option">Seleccione Grupo</option>
+							<option *ngFor="let item of selectgruop" value="{{item.id}}" class="form-select-option">{{item.descripcion}}</option>
+						</select>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Categoria:</span>
+						<input type="text" name="categoria" class="form-input-text2" placeholder="Categoria" #nombre="ngModel" [(ngModel)]="nominaModel.categoria"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Plan:</span>
+						<input type="text" name="plan" class="form-input-text2" placeholder="Plan" #nombre="ngModel" [(ngModel)]="nominaModel.plan"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Poliza ART:</span>
+						<input type="text" name="poliza" class="form-input-text2" placeholder="Poliza ART" #nombre="ngModel" [(ngModel)]="nominaModel.poliza"/>
+					</div>
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Premio:</span>
+						<div class="double-input-ctn">
+							<input type="checkbox" name="premio"  class="form-check2" #nombre="ngModel" [(ngModel)]="nominaModel.premio">
+							<input type="text" name="t_premio" class="form-input-text3" placeholder="Premio" #nombre="ngModel" [(ngModel)]="nominaModel.t_premio"/>
+						</div>
+					</div>
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Viaticos:</span>
+						<div class="form-check-ctn">
+							<input type="checkbox" name="viaticos" class="form-check" #nombre="ngModel" [(ngModel)]="nominaModel.viaticos">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="datosL-col3-ctn">
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Superior / Jefe:</span>
+						<input type="text" name="jefe" class="form-input-text2" placeholder="Superior / Jefe" #nombre="ngModel" [(ngModel)]="nominaModel.jefe"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Arreglo Vac.:</span>
+						<input type="text" name="vacaciones" class="form-input-text2" placeholder="Arreglo Vacaciones" #nombre="ngModel" [(ngModel)]="nominaModel.vacaciones"/>
+					</div>
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">OS Excedente:</span>
+						<div class="form-check-ctn">
+							<input type="checkbox" name="osexcedente" class="form-check" #nombre="ngModel" [(ngModel)]="nominaModel.osexcedente">
+						</div>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Celular:</span>
+						<div class="form-check-ctn">
+							<input type="checkbox" name="celular" class="form-check" #nombre="ngModel" [(ngModel)]="nominaModel.celular">
+						</div>
+					</div>
+
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Almuerzo:</span>
+						<div class="double-input-ctn">
+							<input type="checkbox" name="almuerzo" class="form-check2" #nombre="ngModel" [(ngModel)]="nominaModel.almuerzo">
+							<input type="text" name="t_almuerzo" class="form-input-text3" placeholder="Almuerzo" #nombre="ngModel" [(ngModel)]="nominaModel.t_almuerzo"/>
+						</div>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Cursos:</span>
+						<div class="form-check-ctn">
+							<input type="checkbox" name="cursos" class="form-check" #nombre="ngModel" [(ngModel)]="nominaModel.cursos">
+						</div>
+					</div>
+				</div>
+				<div class="title-datosL2-ctn">
+					<h2 class="title-datosL">
+						Domicilio:2020
+					</h2>
+				</div>
+				<div class="datosL-col4-ctn">
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Calle:</span>
+						<input type="text" name="calle" class="form-input-text2" placeholder="Calle" #nombre="ngModel" [(ngModel)]="nominaModel.calle"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Localidad:</span>
+						<input type="text" name="localidad" class="form-input-text2" placeholder="Localidad" #nombre="ngModel" [(ngModel)]="nominaModel.localidad"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Tel. de Linea:</span>
+						<input type="text" name="telefono" class="form-input-text2" placeholder="Telefono de Linea" #nombre="ngModel" [(ngModel)]="nominaModel.telefono"/>
+					</div>
+				</div>
+				<div class="datosL-col5-ctn">
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Número:</span>
+						<input type="text" name="numero" class="form-input-text2" placeholder="Numero" #nombre="ngModel" [(ngModel)]="nominaModel.numero"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Provincia:</span>
+						<input type="text" name="provincia" class="form-input-text2" placeholder="Provincia" #nombre="ngModel" [(ngModel)]="nominaModel.provincia"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Tel. Celular:</span>
+						<input type="text" name="tcelular" class="form-input-text2" placeholder="Tel.Celular" #nombre="ngModel" [(ngModel)]="nominaModel.tcelular"/>
+					</div>
+				</div>
+				<div class="datosL-col6-ctn">
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Piso:</span>
+						<input type="text" name="piso" class="form-input-text2" placeholder="Piso" #nombre="ngModel" [(ngModel)]="nominaModel.piso"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Código Postal:</span>
+						<input type="text" name="codp" class="form-input-text2" placeholder="Codigo Postal" #nombre="ngModel" [(ngModel)]="nominaModel.codp"/>
+					</div>
+
+					<div class="input-datosL-ctn">
+						<span  class="label-text2">Ult. Mod.:</span>
+						<input type="text" name="fecha_update" class="form-input-text2" placeholder="Ultima Modificacion" #nombre="ngModel" [(ngModel)]="nominaModel.fecha_update"/>
+					</div>
+				</div>
+			</div>
+
+			<div class="employee-docs-ctn">
+				<div class="title-docs-ctn">
+					<h2 class="title-datosL">
+						Documentos Cargados:2020
+					</h2>
+				</div>
+				<div class="doc-item docs-afip">
+<!--					<input type="text" name="alta_afip" class="form-input-text" placeholder=" Alta / Baja AFIP" #nombre="ngModel" [(ngModel)]="nominaModel.alta_afip"/>-->
+					<h3 class="title-arch">Alta AFIP:</h3>
+					<div class="img-doc">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-import" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#0066AD" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+							<path d="M5 13v-8a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5.5m-9.5 -2h7m-3 -3l3 3l-3 3" />
+						</svg>
+					</div>
+					<div class="btn-img-emp" >
+						<div class="btn-car-arch-ctn">
+							<p class="btn-car-arch-text">Cargar Archivo</p>
+							<input type="file" class="btn-car-arch" (change)="afipChangeEvent($event)">
+						</div>
+					</div>
+				</div>
+
+				<div class="doc-item docs-dnifr">
+<!--					<input type="text" name="foto_dni" class="form-input-text" placeholder="Fotocopia DNI frente" #nombre="ngModel" [(ngModel)]="nominaModel.foto_dni"/>-->
+					<h3 class="title-arch">Fot. DNI Frente:</h3>
+					<div class="img-doc">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-import" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#0066AD" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+							<path d="M5 13v-8a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5.5m-9.5 -2h7m-3 -3l3 3l-3 3" />
+						</svg>
+					</div>
+					<div class="btn-img-emp" >
+						<div class="btn-car-arch-ctn">
+							<p class="btn-car-arch-text">Cargar Archivo</p>
+							<input type="file" class="btn-car-arch" (change)="frenteChangeEvent($event)">
+						</div>
+					</div>
+				</div>
+
+				<div class="doc-item docs-dnido">
+<!--					<input type="text" name="foto_dnidso" class="form-input-text" placeholder="Fotocopia DNI Dorso" #nombre="ngModel" [(ngModel)]="nominaModel.foto_dnidso" />-->
+					<h3 class="title-arch">Fot. DNI Dorso:</h3>
+					<div class="img-doc">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-import" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#0066AD" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+							<path d="M5 13v-8a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5.5m-9.5 -2h7m-3 -3l3 3l-3 3" />
+						</svg>
+					</div>
+					<div class="btn-img-emp" >
+						<div class="btn-car-arch-ctn">
+							<p class="btn-car-arch-text">Cargar Archivo</p>
+							<input type="file" class="btn-car-arch" (change)="dorsoChangeEvent($event)">
+						</div>
+					</div>
+				</div>
+
+				<div class="doc-item docs-cuil">
+<!--					<input type="text" name="cert_cuil" class="form-input-text" placeholder="Certificado Cuil" #nombre="ngModel" [(ngModel)]="nominaModel.cert_cuil"/>-->
+					<h3 class="title-arch">Certificado CUIL:</h3>
+					<div class="img-doc">
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-import" width="56" height="56" viewBox="0 0 24 24" stroke-width="1" stroke="#0066AD" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<path d="M14 3v4a1 1 0 0 0 1 1h4" />
+							<path d="M5 13v-8a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5.5m-9.5 -2h7m-3 -3l3 3l-3 3" />
+						</svg>
+					</div>
+					<div class="btn-img-emp" >
+						<div class="btn-car-arch-ctn">
+							<p class="btn-car-arch-text">Cargar Archivo</p>
+							<input type="file" class="btn-car-arch" (change)="cuilChangeEvent($event)">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-btns-ctn">
+				<button type="button" class="btn-emp-vol">Volver</button>
+				<button type="submit"  class="btn-emp" [disabled]="!employeeDataForm.form.valid" >Guardar</button>
+			</div>
+
+
+	</form>
+
+</div>

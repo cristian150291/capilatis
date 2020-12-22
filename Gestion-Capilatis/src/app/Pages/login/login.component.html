@@ -1,0 +1,51 @@
+<div class="ctn-padre">
+    <div class="ctn-login">
+        <div class="img-login"></div>
+        <div class="title-ctn">
+            <h1 class="title-login">
+                Capi-gestión
+            </h1>
+        </div>
+        <div class="form-login-ctn">
+            <div class="form-login-items">
+                <div class="form-title-ctn">
+                    <h2 class="form-title">Inicio de sesión</h2>
+                </div>
+                <form class="form-login" action="" name="loginForm" #loginForm="ngForm"  (ngSubmit)="loginPrueba(loginForm)" >
+                    <div class="form-input-text-ctn">
+                        <input type="text" name="user" class="form-input-text" placeholder="Usuario" #user="ngModel" [(ngModel)]="modelLogin.user" autocomplete="off" required >
+                        <div class="icon-text icon-user"></div>
+                    </div>
+                    <div class="form-input-pass-ctn">
+                        <input type="password" name="pass" class="form-input-pass" placeholder="Contraseña" #pass="ngModel" [(ngModel)]="modelLogin.pass" autocomplete="off" required />
+                        <div class="icon-text icon-lock"></div>
+                    </div>
+
+                    <div class="sep"></div>
+                    <div class="form-record-ctn">
+                        <input #checkRecordar type="checkbox" class="form-check">
+                        <span class="text-check">Recordar</span>
+                    </div>
+
+                    <div class="sep"></div>
+                    <div class="form-btn-ctn">
+                        <button type="submit"  class="form-btn" [disabled]="!loginForm.form.valid" >Ingresar</button>
+                    </div>
+                    <div class="form-error-ctn" *ngIf="errorLogin">
+                        <span class="form-error" >{{messageError}}</span>
+                    </div>
+
+                </form>
+                <div class="sep"></div>
+                <div class="form-olv-pass-ctn">
+                    <p class="olv-pass">¿Olvido su contraseña?</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-login-ctn">
+            <div class="logo"></div>
+        </div>
+    </div>
+</div>
+
+

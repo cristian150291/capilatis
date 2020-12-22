@@ -1,0 +1,25 @@
+<div class="grid-table-ctn">
+    <div class="cabecera-grig-table-ctn">
+        <ul class="cabecera-table-ctn">
+					<li class="cabecera-item-ctn" *ngFor="let title of cabecera"  ><div class="cabecera-item"> {{title}} </div></li>
+                    <li class="cabecera-item-ctn"><div class="cabecera-item"> Opciones</div></li>
+         </ul>
+    </div>
+    <div class="contenido-grid-table-ctn">
+        <ul class="contenido-table-ctn" *ngFor="let item of tabla">
+					<li class="contenido-item-ctn pequenio"><div class="contenido-item">{{item.id_legajo}}</div></li>
+					<li class="contenido-item-ctn grande"><div class="contenido-item">{{item.nombre}}</div></li>
+					<li class="contenido-item-ctn mediano"><div class="contenido-item">{{item.cuil}}</div></li>
+          <li class="contenido-item-ctn pequenio" (click)="eventEditField(item.id_legajo)">
+              <div class="contenido-item"><div class="icon-id-card-o tooltip"><span class="tooltiptext">Ver / Editar</span></div></div>
+          </li>
+        </ul>
+    </div>
+</div>
+<div class="pag">
+
+    <button type="button" (click)="backPages()" class="prev-button button-grid"> Anterior </button>
+    <button type="button" (click)="nextPages()" class="next-button button-grid"> Siguiente </button>
+</div>
+
+

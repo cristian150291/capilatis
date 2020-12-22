@@ -1,0 +1,15 @@
+<div class="title-and-navbar-ctn">
+	<app-title
+			[title]="'Lista de Empleados'"
+	></app-title>
+</div>
+
+
+<app-grid-emp-custom
+		[list] = "tabla"
+	  (fieldEvent)="editEmpleado($event)"
+		(next)="nextPages($event)"
+		(back)="backPages($event)"
+></app-grid-emp-custom>
+
+

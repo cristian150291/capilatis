@@ -1,0 +1,11 @@
+<div class="title-and-navbar-ctn">
+	<app-title
+			[title]="'Datos del Empleado'"
+	></app-title>
+</div>
+
+<app-employee-data
+	(emitNomina)="eventEmployeeChild($event)"
+	[dataModel]="modelNomina"
+> </app-employee-data>
+
